@@ -1,9 +1,6 @@
 import {API_BASE_URL} from './config.js'
 
 function buildUrl(path) {
-    if (!API_BASE_URL) {
-        throw new Error('VITE_API_BASE_URL is not configured')
-    }
 
     const normalizedBase = API_BASE_URL.endsWith('/') ? API_BASE_URL.slice(0, -1) : API_BASE_URL
     const normalizedPath = path.startsWith('/') ? path : `/${path}`
