@@ -12,7 +12,7 @@ export default function JokeCard({joke, currentUserId, onEdit, onDelete}) {
         <article className="joke-card">
             <div className="joke-card__header">
                 <div>
-                    <div className="joke-card__author">{joke.userName}</div>
+                    <div className="joke-card__author">{joke.username}</div>
                     <div className="joke-card__time">{relativeTime}</div>
                 </div>
 

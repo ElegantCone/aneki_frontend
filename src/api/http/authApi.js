@@ -15,11 +15,8 @@ export const authApi = {
         })
     },
 
-    async me(token) {
+    async me() {
         return httpRequest('/api/auth/me', {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
         })
     },
 }

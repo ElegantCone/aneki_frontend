@@ -4,7 +4,7 @@ export function buildFeed(jokes, users) {
     return jokes
         .map((joke) => ({
             ...joke,
-            userName: users.find((user) => user.id === joke.userId)?.name ?? 'Пользователь',
+            username: users.find((user) => user.id === joke.userId)?.name ?? 'Пользователь',
         }))
         .sort((a, b) => b.createdAt - a.createdAt)
 }

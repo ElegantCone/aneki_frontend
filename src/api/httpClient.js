@@ -10,11 +10,12 @@ function buildUrl(path) {
 
 export async function httpRequest(path, options = {}) {
     const response = await fetch(buildUrl(path), {
+        ...options,
         headers: {
             'Content-Type': 'application/json',
             ...(options.headers ?? {}),
         },
-        ...options,
+        credentials: "include",
     })
 
     const contentType = response.headers.get('content-type') ?? ''

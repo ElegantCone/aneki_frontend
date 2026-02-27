@@ -77,7 +77,6 @@ Response:
 {
   "id": "j_123",
   "userId": "u_123",
-  "userName": "Анна",
   "content": "Текст анекдота",
   "createdAt": 1730000000000,
   "updatedAt": 1730000000000
@@ -93,7 +92,7 @@ Response:
     {
       "id": "j_123",
       "userId": "u_123",
-      "userName": "Анна",
+      "username": "Анна",
       "content": "Текст анекдота",
       "createdAt": 1730000000000,
       "updatedAt": 1730000000000
@@ -119,7 +118,7 @@ Response:
   "joke": {
     "id": "j_123",
     "userId": "u_123",
-    "userName": "Анна",
+    "username": "Анна",
     "content": "Текст анекдота",
     "createdAt": 1730000000000,
     "updatedAt": 1730000000000
@@ -144,7 +143,7 @@ Response:
   "joke": {
     "id": "j_123",
     "userId": "u_123",
-    "userName": "Анна",
+    "username": "Анна",
     "content": "Обновленный текст анекдота",
     "createdAt": 1730000000000,
     "updatedAt": 1730000100000

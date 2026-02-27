@@ -6,16 +6,16 @@ function hasString(value) {
     return typeof value === 'string' && value.length > 0
 }
 
-export function unwrapData(payload) {
-    if (isObject(payload) && isObject(payload.data)) {
-        return payload.data
+export function unwrapData(payload, field) {
+    const value = payload?.[field];
+    if (isObject(payload) && isObject(value) || Array.isArray(value)) {
+        return value
     }
     return payload
 }
 
 export function normalizeUser(payload) {
-    const data = unwrapData(payload)
-    const user = isObject(data) && isObject(data.user) ? data.user : data
+    const user = unwrapData(payload, 'user')
 
     if (!isObject(user)) {
         throw new Error('Invalid user payload: expected object')
@@ -50,8 +50,7 @@ export function normalizeAuthResponse(payload) {
 }
 
 export function normalizeJoke(payload) {
-    const data = unwrapData(payload)
-    const joke = isObject(data) && isObject(data.joke) ? data.joke : data
+    const joke = unwrapData(payload, 'joke')
 
     if (!isObject(joke)) {
         throw new Error('Invalid joke payload: expected object')
@@ -69,8 +68,7 @@ export function normalizeJoke(payload) {
 }
 
 export function normalizeJokesList(payload) {
-    const data = unwrapData(payload)
-    const jokes = Array.isArray(data?.jokes) ? data.jokes : Array.isArray(data) ? data : null
+    const jokes = unwrapData(payload, 'jokes')
 
     if (!Array.isArray(jokes)) {
         throw new Error('Invalid jokes response: expected jokes array')

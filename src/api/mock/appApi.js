@@ -17,7 +17,7 @@ function parseMockToken(token) {
 function withUserName(joke, users) {
     return {
         ...joke,
-        userName: users.find((user) => user.id === joke.userId)?.name ?? 'Пользователь',
+        username: users.find((user) => user.id === joke.userId)?.name ?? 'Пользователь',
     }
 }
 
