@@ -24,8 +24,11 @@ jobs:
       contents: read
 
     steps:
-      - name: Checkout
+      - name: Checkout frontend repo
         uses: actions/checkout@v4
+        with:
+          repository: ElegantCone/aneki_frontend
+          ref: master
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
