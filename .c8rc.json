@@ -1,0 +1,17 @@
+{
+  "all": true,
+  "include": [
+    "src/api/**/*.js"
+  ],
+  "exclude": [
+    "src/api/http/**",
+    "src/api/index.js",
+    "src/api/appApi.js",
+    "src/api/config.js"
+  ],
+  "reporter": [
+    "text",
+    "html"
+  ],
+  "reports-dir": "coverage"
+}
