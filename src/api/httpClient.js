@@ -1,10 +1,8 @@
 import {API_BASE_URL} from './config.js'
 
 function buildUrl(path) {
-
     const normalizedBase = API_BASE_URL.endsWith('/') ? API_BASE_URL.slice(0, -1) : API_BASE_URL
     const normalizedPath = path.startsWith('/') ? path : `/${path}`
-    console.log(`buildUrl: ${normalizedBase}${normalizedPath}`)
     return `${normalizedBase}${normalizedPath}`
 }
 
@@ -15,7 +13,7 @@ export async function httpRequest(path, options = {}) {
             'Content-Type': 'application/json',
             ...(options.headers ?? {}),
         },
-        credentials: "include",
+        credentials: 'include',
     })
 
     const contentType = response.headers.get('content-type') ?? ''
@@ -32,4 +30,3 @@ export async function httpRequest(path, options = {}) {
 
     return payload
 }
-
