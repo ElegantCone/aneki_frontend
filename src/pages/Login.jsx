@@ -122,12 +122,6 @@ export default function Login() {
                         {loading ? 'Подождите...' : isSignup ? 'Создать аккаунт' : 'Войти'}
                     </button>
                 </form>
-
-                <div className="hint-box">
-                    <strong>Демо-пользователи:</strong>
-                    <div>`marina@example.com / 123456`</div>
-                    <div>`ilya@example.com / 123456`</div>
-                </div>
             </section>
         </main>
     )
