@@ -5,7 +5,11 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 
-COPY . .
+COPY src/ ./src/
+COPY public/ ./public/
+COPY vite.config.js ./vite.config.js
+COPY index.html ./index.html
+
 RUN npm run build
 
 FROM nginx:1.27-alpine
