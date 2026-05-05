@@ -11,6 +11,10 @@ on:
       image_name:
         required: true
         type: string
+      ref:
+        required: false
+        type: string
+        default: master
     secrets:
       REGISTRY_TOKEN:
         required: true
@@ -28,7 +32,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: ElegantCone/aneki_frontend
-          ref: master
+          ref: ${{ inputs.ref }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
