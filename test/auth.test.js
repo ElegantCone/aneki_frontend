@@ -34,3 +34,9 @@ test('signupUser rejects duplicate email', () => {
   )
 })
 
+test('signupUser rejects blank name', () => {
+  assert.throws(
+    () => signupUser(users, { name: '   ', email: 'new@example.com', password: '123456' }),
+    /Введите имя/,
+  )
+})

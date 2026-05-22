@@ -55,3 +55,26 @@ test('normalizeAuthResponse throws on invalid payload', () => {
   assert.throws(() => normalizeAuthResponse({ token: 'x' }), /Invalid user payload/)
 })
 
+test('unwrapData falls back to base payload when field is not object or array', () => {
+  const payload = { data: { user: 'u1', ok: true } }
+  assert.deepEqual(unwrapData(payload, 'user'), { user: 'u1', ok: true })
+})
+
+test('normalizers reject malformed payloads', () => {
+  assert.throws(() => normalizeUser(null), /Invalid user payload: expected object/)
+  assert.throws(
+    () => normalizeUser({ id: '', name: 'Anna', email: 'a@example.com' }),
+    /Invalid user payload: expected id, name, email/,
+  )
+  assert.throws(() => normalizeAuthResponse(null), /Invalid auth response: expected object/)
+  assert.throws(
+    () => normalizeAuthResponse({ token: '', user: { id: 'u1', name: 'Anna', email: 'a@example.com' } }),
+    /Invalid auth response: expected token/,
+  )
+  assert.throws(() => normalizeJoke(null), /Invalid joke payload: expected object/)
+  assert.throws(
+    () => normalizeJoke({ id: 'j1', userId: 'u1', content: '' }),
+    /Invalid joke payload: expected id, userId, content/,
+  )
+  assert.throws(() => normalizeJokesList({ jokes: null }), /Invalid jokes response: expected jokes array/)
+})

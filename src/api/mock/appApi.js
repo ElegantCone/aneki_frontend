@@ -92,7 +92,7 @@ export const mockAppApi = {
     const state = readAppState()
     const jokes = updateJokesList({ jokes: state.jokes, currentUser, jokeId, content })
     writeAppState({ ...state, jokes })
-    const updated = jokes.find((joke) => joke.id === jokeId)
+    const updated = jokes.find((joke) => joke.id === jokeId && joke.userId === currentUser.id)
     if (!updated) {
       throw new Error('Анекдот не найден')
     }
