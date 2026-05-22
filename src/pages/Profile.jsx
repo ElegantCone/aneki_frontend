@@ -1,7 +1,8 @@
+import React from 'react'
 import {useMemo, useState} from 'react'
 import NavigationBar from '../components/NavigationBar.jsx'
 import JokeCard from '../components/JokeCard.jsx'
-import {useAneki} from '../context/AnekiContext.jsx'
+import {useAneki} from '../context/anekiContext.js'
 
 export default function Profile() {
     const {currentUser, getUserJokes, addJoke, updateJoke, deleteJoke} = useAneki()

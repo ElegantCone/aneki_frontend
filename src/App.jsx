@@ -1,5 +1,6 @@
+import React from 'react'
 import {Link, useNavigate} from 'react-router-dom'
-import {useAneki} from './context/AnekiContext.jsx'
+import {useAneki} from './context/anekiContext.js'
 
 function App() {
     const navigate = useNavigate()

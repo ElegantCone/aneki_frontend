@@ -1,7 +1,7 @@
-import {createContext, useCallback, useContext, useEffect, useMemo, useState} from 'react'
+import React from 'react'
+import {useCallback, useEffect, useMemo, useState} from 'react'
 import {appApi} from '../api/index.js'
-
-const AnekiContext = createContext(null)
+import {AnekiContext} from './anekiContext.js'
 
 export function AnekiProvider({children}) {
     const [currentUser, setCurrentUser] = useState(null)
@@ -102,12 +102,4 @@ export function AnekiProvider({children}) {
     }, [currentUser, feed, isBootstrapping, refreshFeed, token])
 
     return <AnekiContext.Provider value={value}>{children}</AnekiContext.Provider>
-}
-
-export function useAneki() {
-    const context = useContext(AnekiContext)
-    if (!context) {
-        throw new Error('useAneki must be used within AnekiProvider')
-    }
-    return context
 }

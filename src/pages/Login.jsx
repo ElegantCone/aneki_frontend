@@ -1,6 +1,7 @@
+import React from 'react'
 import {useState} from 'react'
 import {Navigate, useNavigate} from 'react-router-dom'
-import {useAneki} from '../context/AnekiContext.jsx'
+import {useAneki} from '../context/anekiContext.js'
 
 export default function Login() {
     const navigate = useNavigate()

@@ -1,5 +1,6 @@
+import React from 'react'
 import {Navigate} from 'react-router-dom'
-import {useAneki} from '../context/AnekiContext.jsx'
+import {useAneki} from '../context/anekiContext.js'
 
 export default function ProtectedRoute({children}) {
     const {isAuthenticated, isBootstrapping} = useAneki()

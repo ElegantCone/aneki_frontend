@@ -20,8 +20,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: test
-        run: npm run test
+      - name: Test with coverage
+        run: npm run test:coverage
 
   build:
     name: build

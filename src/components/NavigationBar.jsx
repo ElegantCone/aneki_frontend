@@ -1,5 +1,6 @@
+import React from 'react'
 import {NavLink, useNavigate} from 'react-router-dom'
-import {useAneki} from '../context/AnekiContext.jsx'
+import {useAneki} from '../context/anekiContext.js'
 
 export default function NavigationBar() {
     const navigate = useNavigate()

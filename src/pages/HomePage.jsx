@@ -1,6 +1,7 @@
+import React from 'react'
 import NavigationBar from '../components/NavigationBar.jsx'
 import JokeCard from '../components/JokeCard.jsx'
-import {useAneki} from '../context/AnekiContext.jsx'
+import {useAneki} from '../context/anekiContext.js'
 
 export default function HomePage() {
     const {currentUser, feed} = useAneki()
